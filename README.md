@@ -1,27 +1,22 @@
-# NgxErrorBox
+@vlah.io/ngx-error-box
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Set of reusable Angular components (factory workers) to help display error messages.
 
-## Development server
+### Usage (code example)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+  constructor(private errorBoxWorker: ErrorBoxWorker) {
+  }
 
-## Code scaffolding
+  render(): void {
+    this.errorBoxWorker.render(error: ErrorBoxInterface, options: DisplayOptionsInterface = {}): ComponentRef<ErrorBoxComponent>
+  }
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### CSS styles
+```
+  /* You can add global styles to this file, and also import other style files */
+  @import "../../ngx-error-box/src/assets/css/ngx-error-box.css";
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more details read [here](https://github.com/vlah-io/ngx-error-box/blob/master/INSTALLATION.md).

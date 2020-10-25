@@ -1,0 +1,40 @@
+<div class="vlahio-error-box-backdrop" [ngClass]="{'vlahio-absolute': container}"></div>
+<div class="vlahio-error-box" [ngClass]="{'vlahio-absolute': container}">
+  <div class="vlahio-error-box-container" #errorBoxContainer>
+    <div class="vlahio-top">
+          <span class="vlahio-close"
+                (click)="dismiss$()"><span></span></span>
+    </div>
+
+    <div class="vlahio-content">
+      <ng-template [ngIf]="!error.errors.length">
+        {{error.message}}
+      </ng-template>
+
+      <ng-template [ngIf]="error.errors.length">
+        <h4>
+          {{error.message}}
+        </h4>
+        <ng-template ngFor let-item [ngForOf]="error.errors">
+          <dl>
+            <dt>{{item['formControlName']}}</dt>
+            <dd>
+              <ul>
+                <ng-template ngFor let-message [ngForOf]="item['errors']">
+                  <li>{{message}}</li>
+                </ng-template>
+              </ul>
+            </dd>
+          </dl>
+        </ng-template>
+      </ng-template>
+    </div>
+
+    <ng-template [ngIf]="retryButtonText">
+      <div class="vlahio-bottom">
+          <span class="vlahio-retry"
+                (click)="retry$()">{{retryButtonText}}</span>
+      </div>
+    </ng-template>
+  </div>
+</div>

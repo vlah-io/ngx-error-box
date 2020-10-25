@@ -1,0 +1,32 @@
+@import "variables";
+
+.vlahio-error-box-backdrop, .vlahio-error-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  word-break: break-all;
+
+  &.vlahio-absolute {
+    position: absolute !important;
+  }
+}
+
+.vlahio-error-box-backdrop {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.vlahio-error-box {
+  align-items: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  .vlahio-error-box-container {
+    @include error-container;
+  }
+}
+

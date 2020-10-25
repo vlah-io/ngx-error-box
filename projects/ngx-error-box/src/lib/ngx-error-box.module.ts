@@ -1,12 +1,21 @@
-import { NgModule } from '@angular/core';
-import { NgxErrorBoxComponent } from './ngx-error-box.component';
-
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ErrorBoxComponent} from './component/error-box.component';
 
 
 @NgModule({
-  declarations: [NgxErrorBoxComponent],
   imports: [
+    CommonModule
   ],
-  exports: [NgxErrorBoxComponent]
+  declarations: [
+    ErrorBoxComponent
+  ],
+  exports: [
+    ErrorBoxComponent
+  ],
+  entryComponents: [
+    ErrorBoxComponent
+  ]
 })
-export class NgxErrorBoxModule { }
+export class NgxErrorBoxModule {
+}

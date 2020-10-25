@@ -1,0 +1,131 @@
+.vlahio-error-box-backdrop, .vlahio-error-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  word-break: break-all;
+}
+.vlahio-error-box-backdrop.vlahio-absolute, .vlahio-error-box.vlahio-absolute {
+  position: absolute !important;
+}
+
+.vlahio-error-box-backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.vlahio-error-box {
+  align-items: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.vlahio-error-box .vlahio-error-box-container {
+  color: #ffffff;
+  background-color: #D32F2F;
+  -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+}
+.vlahio-error-box .vlahio-error-box-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+.vlahio-error-box .vlahio-error-box-container::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+.vlahio-error-box .vlahio-error-box-container::-webkit-scrollbar-thumb {
+  background-color: #580008;
+}
+@media (max-width: 539px) {
+  .vlahio-error-box .vlahio-error-box-container {
+    width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+  }
+}
+@media (min-width: 540px) {
+  .vlahio-error-box .vlahio-error-box-container {
+    width: 500px;
+    max-height: calc(100vh - 20%);
+  }
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top {
+  text-align: right;
+  line-height: initial;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close {
+  display: inline-flex;
+  cursor: pointer;
+  padding: 6px;
+  background-color: #580008;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close:hover span:after, .vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close:hover span:before {
+  border-color: #D32F2F;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close span {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close span:before, .vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close span:after {
+  position: absolute;
+  height: 20px;
+  left: 8px;
+  border-left: 4px solid #d6d5d5;
+  content: "";
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close span:after {
+  transform: rotate(45deg);
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-top .vlahio-close span:before {
+  transform: rotate(-45deg);
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-content {
+  padding: 20px 10px;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-content h4 {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  border-bottom: 1px dashed #ff7878;
+  font-size: 1.4rem;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-content dd {
+  margin: 0;
+  padding: 0;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-content ul {
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-content ul li {
+  margin: 0.3rem 0 0 0;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-bottom {
+  margin: 0.8rem 0 0 0;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-bottom .vlahio-retry {
+  background-color: #580008;
+  color: #D32F2F;
+  padding: 4px 10px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.75);
+}
+.vlahio-error-box .vlahio-error-box-container .vlahio-bottom .vlahio-retry:hover {
+  -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=ngx-error-box.css.map */

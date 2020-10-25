@@ -1,24 +1,22 @@
-# NgxErrorBox
+@vlah.io/ngx-error-box
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Set of reusable Angular components (factory workers) to help display error messages.
 
-## Code scaffolding
+### Usage (code example)
 
-Run `ng generate component component-name --project ngx-error-box` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-error-box`.
-> Note: Don't forget to add `--project ngx-error-box` or else it will be added to the default project in your `angular.json` file. 
+```
+  constructor(private errorBoxWorker: ErrorBoxWorker) {
+  }
 
-## Build
+  render(): void {
+    this.errorBoxWorker.render(error: ErrorBoxInterface, options: DisplayOptionsInterface = {}): ComponentRef<ErrorBoxComponent>
+  }
+```
 
-Run `ng build ngx-error-box` to build the project. The build artifacts will be stored in the `dist/` directory.
+### CSS styles
+```
+  /* You can add global styles to this file, and also import other style files */
+  @import "../../ngx-error-box/src/assets/css/ngx-error-box.css";
+```
 
-## Publishing
-
-After building your library with `ng build ngx-error-box`, go to the dist folder `cd dist/ngx-error-box` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-error-box` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more details read [here](https://github.com/vlah-io/ngx-error-box/blob/master/INSTALLATION.md).

@@ -12,8 +12,8 @@ export class ErrorBoxComponent implements OnDestroy {
   @Input() retryButtonText?: string | null;
   @Input() error: ErrorBoxInterface;
   @Input() container?: HTMLElement;
-  @Output() retry?: EventEmitter<true> = new EventEmitter<true>();
-  @Output() dismiss: EventEmitter<true> = new EventEmitter<true>();
+  @Output() retry$?: EventEmitter<true> = new EventEmitter<true>();
+  @Output() dismiss$: EventEmitter<true> = new EventEmitter<true>();
 
   constructor() {
   }
@@ -29,18 +29,18 @@ export class ErrorBoxComponent implements OnDestroy {
 
   @HostListener('document:keydown.escape')
   _onEsc(): void {
-    this.dismiss$();
+    this.dismiss();
   }
 
   ngOnDestroy(): void {
     this.subSink.unsubscribe();
   }
 
-  retry$(): void {
-    this.retry.emit(true);
+  retry(): void {
+    this.retry$.emit(true);
   }
 
-  dismiss$(): void {
-    this.dismiss.emit(true);
+  dismiss(): void {
+    this.dismiss$.emit(true);
   }
 }

@@ -1,9 +1,9 @@
-<div class="vlahio-error-box-backdrop" [ngClass]="{'vlahio-absolute': container}"></div>
-<div class="vlahio-error-box" [ngClass]="{'vlahio-absolute': container}">
-  <div class="vlahio-error-box-container" #errorBoxContainer>
+<div [ngClass]="{'vlahio-absolute': container}" class="vlahio-error-box-backdrop"></div>
+<div [ngClass]="{'vlahio-absolute': container}" class="vlahio-error-box">
+  <div #errorBoxContainer class="vlahio-error-box-container">
     <div class="vlahio-top">
-          <span class="vlahio-close"
-                (click)="dismiss$()"><span></span></span>
+      <span (click)="dismiss()"
+            class="vlahio-close"><span></span></span>
     </div>
 
     <div class="vlahio-content">
@@ -15,12 +15,12 @@
         <h4>
           {{error.message}}
         </h4>
-        <ng-template ngFor let-item [ngForOf]="error.errors">
+        <ng-template [ngForOf]="error.errors" let-item ngFor>
           <dl>
             <dt>{{item['formControlName']}}</dt>
             <dd>
               <ul>
-                <ng-template ngFor let-message [ngForOf]="item['errors']">
+                <ng-template [ngForOf]="item['errors']" let-message ngFor>
                   <li>{{message}}</li>
                 </ng-template>
               </ul>
@@ -32,8 +32,8 @@
 
     <ng-template [ngIf]="retryButtonText">
       <div class="vlahio-bottom">
-          <span class="vlahio-retry"
-                (click)="retry$()">{{retryButtonText}}</span>
+        <span (click)="retry()"
+              class="vlahio-retry">{{retryButtonText}}</span>
       </div>
     </ng-template>
   </div>

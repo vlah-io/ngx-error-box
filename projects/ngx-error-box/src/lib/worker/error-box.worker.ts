@@ -27,7 +27,7 @@ export class ErrorBoxWorker {
     if (retry) {
       compRefInstance.retryButtonText = retry.buttonText;
       compRefInstance.subSink.add(
-        compRefInstance.retry.subscribe(
+        compRefInstance.retry$.subscribe(
           () => {
             retry.callback(compRef);
             this.destroy(compRef);
@@ -37,7 +37,7 @@ export class ErrorBoxWorker {
     }
 
     compRefInstance.subSink.add(
-      compRefInstance.dismiss.subscribe(
+      compRefInstance.dismiss$.subscribe(
         () => {
           if (dismiss) {
             dismiss(compRef);

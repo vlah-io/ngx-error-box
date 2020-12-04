@@ -7,10 +7,10 @@ import {SubSinkWorker} from '@vlah.io/ngx-worker';
   templateUrl: './error-box.component.html'
 })
 export class ErrorBoxComponent implements OnDestroy {
-  @Input() retryButtonText?: string | null;
+  @Input() retryButtonText?: string | null | undefined;
   @Input() error: ErrorBoxInterface | undefined;
-  @Input() container?: HTMLElement;
-  @Output() retry$?: EventEmitter<true> = new EventEmitter<true>();
+  @Input() container?: HTMLElement | undefined;
+  @Output() retry$: EventEmitter<true> = new EventEmitter<true>();
   @Output() dismiss$: EventEmitter<true> = new EventEmitter<true>();
   subSink = new SubSinkWorker();
 
@@ -36,7 +36,7 @@ export class ErrorBoxComponent implements OnDestroy {
   }
 
   retry(): void {
-    this.retry$?.emit(true);
+    this.retry$.emit(true);
   }
 
   dismiss(): void {

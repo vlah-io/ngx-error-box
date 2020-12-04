@@ -26,16 +26,14 @@ export class ErrorBoxWorker {
 
     if (retry) {
       compRefInstance.retryButtonText = retry.buttonText;
-      if (compRefInstance.retry$) {
-        compRefInstance.subSink.add(
-          compRefInstance.retry$.subscribe(
-            () => {
-              retry.callback(compRef);
-              this.destroy(compRef);
-            }
-          )
-        );
-      }
+      compRefInstance.subSink.add(
+        compRefInstance.retry$.subscribe(
+          () => {
+            retry.callback(compRef);
+            this.destroy(compRef);
+          }
+        )
+      );
     }
 
     compRefInstance.subSink.add(

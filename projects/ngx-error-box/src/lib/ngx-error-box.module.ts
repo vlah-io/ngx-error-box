@@ -2,7 +2,6 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {ErrorBoxComponent} from './component/error-box.component';
 
-
 @NgModule({
   imports: [
     CommonModule
@@ -11,9 +10,6 @@ import {ErrorBoxComponent} from './component/error-box.component';
     ErrorBoxComponent
   ],
   exports: [
-    ErrorBoxComponent
-  ],
-  entryComponents: [
     ErrorBoxComponent
   ]
 })

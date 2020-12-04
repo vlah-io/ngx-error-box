@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-error-box/tsconfig.lib.json",
-              "projects/ngx-error-box/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-error-box/**/*.ts",
+              "projects/ngx-error-box/**/*.html"
             ]
           }
         }
@@ -79,7 +76,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -134,15 +130,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-error-box-test/tsconfig.app.json",
-              "projects/ngx-error-box-test/tsconfig.spec.json",
-              "projects/ngx-error-box-test/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-error-box-test/**/*.ts",
+              "projects/ngx-error-box-test/**/*.html"
             ]
           }
         },
@@ -159,6 +151,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-error-box"
 }

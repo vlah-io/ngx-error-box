@@ -14,8 +14,8 @@ export interface ErrorBoxValidationInterface {
 export interface DisplayOptionsInterface {
   dismiss?: (compRef: ComponentRef<ErrorBoxComponent>) => void;
   retry?: null | {
-    buttonText: string,
-    callback: (compRef: ComponentRef<ErrorBoxComponent>) => void
+    buttonText: string;
+    callback: (compRef: ComponentRef<ErrorBoxComponent>) => void;
   };
   container?: HTMLElement;
 }

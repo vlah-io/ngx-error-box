@@ -4,8 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts",
     "umdModuleIds": {
-      "@vlah.io/ngx-worker": "vlah.io-ngx-worker",
-      "subsink": "subsink"
+      "@vlah.io/ngx-worker": "vlah.io-ngx-worker"
     }
   }
 }
